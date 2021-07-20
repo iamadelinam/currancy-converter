@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+html,body{
+    height: 100%;
+    width: 100%;
+    /* width: 1152px; */
+}
+
+body {
+    font-family: Roboto;
+    margin: 0px;
+}
+
+header {
+    background: #F5F5F6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    margin-left: 100px;
+    height: 50px;
+}
+
+.logo {
+    width: 89px;
+    height: 23px;
+}
+
+.list {
+    display: flex;
+}
+
+li {
+    list-style-type: none;
+    padding-top: 0px;
+    padding-bottom: 2px;
+    padding-left: 25px;
+    padding-right: 4px;
+    position: relative;
+    font-family: Roboto;    
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    color: #959BA4;
+}
+
+li:hover {
+    color: #000000;
+}
+.enter {
+    border-radius: 4px;
+    border: none;
+    width: 58px;
+    height: 33px;
+    line-height: 35px;
+    text-align: center;
+    background: #FFFFFF;
+    color: #000000;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    margin-top: 0px;
+    margin-bottom: 13px;
+    margin-right: 102px;   
+}
+
+.dif-curancy {
+    display: flex;
+    flex-direction: row;
+}
+
+.currancy-name {
+    width: 50px;
+    height: 28px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #C6C6C6;
+    background: #FFFFFF;
+    border: 0.5px solid ;
+    margin: 0px;
+}
