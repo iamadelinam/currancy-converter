@@ -44,7 +44,6 @@ li {
     padding-right: 4px;
     position: relative;
     font-family: Roboto;    
-    font-style: normal;
     font-weight: 500;
     font-size: 11px;
     color: #959BA4;
@@ -63,7 +62,6 @@ li:hover {
     background: #FFFFFF;
     color: #000000;
     font-family: Roboto;
-    font-style: normal;
     font-weight: 500;
     font-size: 11px;
     margin-top: 0px;
@@ -71,21 +69,72 @@ li:hover {
     margin-right: 102px;   
 }
 
-.dif-curancy {
+.converter-head {
+    margin-left: 253px;
+    margin-top: 56px;
+    margin-bottom: 33px;
+}
+
+.converter {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 253px;
+    margin-right: 258px;
+    margin-top: 33px;
 }
+
+.change-button {
+    width: 36.85px;
+    height: 31.77px;
+}
+.block {
+    display: flex;
+    flex-direction: column;
+}
+
+.text {
+    color: #9F9F9F;
+}
+
 
 .currancy-name {
     width: 50px;
     height: 28px;
     font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     font-size: 12px;
     line-height: 14px;
     color: #C6C6C6;
     background: #FFFFFF;
     border: 0.5px solid ;
+    outline: none;
+    float: left;
     margin: 0px;
 }
+
+.currancy-name:hover {
+    background: #833AE0;
+    color: #FFFFFF;
+}
+
+.value {
+    width: 259px;
+    height: 102px;
+    border: 1px solid #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-family: Roboto;
+    font-size: 36px;
+    margin-top: 21px;
+    font-family: Roboto;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #000000;
+}
+
+
