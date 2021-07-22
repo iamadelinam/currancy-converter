@@ -33,53 +33,41 @@
                     <p class="text">У меня есть</p>
                 </div>
                 <div class="dif-currancy">
-                    <button class="currancy-name">RUB</button>
-                    <button class="currancy-name">USD</button>
-                    <button class="currancy-name">EUR</button>
+                    <button class="currancy-name rub">RUB</button>
+                    <button class="currancy-name usd">USD</button>
+                    <button class="currancy-name eur">EUR</button>
                     <button class="currancy-name">GBP</button>
-                    <select class="currancy-name">
-                        <option>AUD</option>
-                        <option>BGN</option>
-                        <option>BRL</option>
-                        <option>CAD</option>
-                        <option>CHF</option>
-                        <option>CNY</option>
+                    <select id="select-left" class="currancy-name other-cur">
                     </select>
                 </div>
-                <div >
-                    <input type="text" class="value">
+                <div class="enter-values">
+                    <input type="number" class="value">
+                    <p class="actual-value"></p>
                 </div>
             </div>
             <div class="change-button">
-                <img class="change-img" src="images/change.svg">
+                <button class="change-button-functional"><img class="change-img" src="images/change.svg"></button>
             </div>
             <div class="block">
                 <div class="message">
-                    <p class="text">У меня есть</p>
+                    <p class="text">Хочу приобрести</p>
                 </div>
                 <div class="dif-currancy">
-                    <button class="currancy-name">RUB</button>
+                    <button class="currancy-name rub">RUB</button>
                     <button class="currancy-name">USD</button>
                     <button class="currancy-name">EUR</button>
                     <button class="currancy-name">GBP</button>
-                    <select class="currancy-name">
-                        <option>AUD</option>
-                        <option>BGN</option>
-                        <option>BRL</option>
-                        <option>CAD</option>
-                        <option>CHF</option>
-                        <option>CNY</option>
+                    <select id="select-right" class="currancy-name other-cur">
                     </select>
                 </div>
-                <div>
-                    <input type="text" class="value">
+                <div class="enter-values">
+                    <input type="number" class="value">
+                    <p class="actual-value"></p>
                 </div>
-
-            
+            </div>
         </div>
     </main>
-    
-    </div>
 
+<script src="script.js"></script>
 </body>
 </html>
