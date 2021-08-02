@@ -9,7 +9,9 @@ body {
     font-family: Roboto;
     margin: 0px;
 }
-
+/* * {
+    border: 2px solid #ef5e1f ;
+} */
 header {
     background: #F5F5F6;
     display: flex;
@@ -165,59 +167,65 @@ li:hover {
     flex-direction: column;
 }
 
-.digits {
+.digits-left, .digits-right {
     width: 259px;
     height: 72px;
     box-sizing: border-box;
-    border-radius: 3px;
-    margin-top: 21px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;    margin-top: 21px;
     padding-left: 13px;
+    padding-bottom: 9px;
     font-family: Roboto;
     font-weight: 700;
     font-size: 36px;
     line-height: 42px;
     color: #000000;
-    border-top-color: rgb(229, 229, 229);
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-right-color: rgb(229, 229, 229);
-    border-right-style: solid;
-    border-right-width: 1px;
-    border-bottom-color: white;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-left-color: rgb(229, 229, 229);
-    border-left-style: solid;
-    border-left-width: 1px;
-    border-image-source: initial;
-    border-image-slice: initial;
-    border-image-width: initial;
-    border-image-outset: initial;
-    border-image-repeat: initial;
+    border-top: 1px solid rgb(229, 229, 229);
+    border-right: 1px solid rgb(229, 229, 229);    
+    border-bottom: 1px solid white;
+    border-left: 1px solid rgb(229, 229, 229);
 }
 
 
 .actual-value-left, .actual-value-right {
-    width: 259px;
-    height: 30px;
+    width: 241px;
+    height: 26px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
     display: inline-block;
-    background: lightpink;
-    /* border-top-color: white;
-    border-top-style: solid;
-    border-top-width: 0.5px;
-    border-right-color: rgb(229, 229, 229);
-    border-right-style: solid;
-    border-right-width: 0.5px;
-    border-bottom-color: rgb(229, 229, 229);
-    border-bottom-style: solid;
-    border-bottom-width: 0.5px;
-    border-left-color: rgb(229, 229, 229);
-    border-left-style: solid;
-    border-left-width:0.5px;
-    border-image-source: initial;
-    border-image-slice: initial;
-    border-image-width: initial;
-    border-image-outset: initial;
-    border-image-repeat: initial; */
+    background: #FFFFFF;
     margin: 0px;
+    padding-top: 4px;
+    padding-left: 16px;
+    font-size: 12px;
+    border-top: 1px solid white;
+    border-right: 1px solid rgb(229, 229, 229);    
+    border-bottom:  1px solid rgb(229, 229, 229);
+    border-left: 1px solid rgb(229, 229, 229);
+}
+
+.loading-div {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.44);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-p {
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    width: 129px;
+    height: 54px;
+    top: 272px;
+    left: 509px;
+    font-size: 24px;
+    line-height: 28px;
 }
