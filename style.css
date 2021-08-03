@@ -118,6 +118,7 @@ li:hover {
 }
 
 
+
 .currancy-name {
     width: 51.8px;
     height: 28px;
@@ -172,7 +173,8 @@ li:hover {
     height: 72px;
     box-sizing: border-box;
     border-top-left-radius: 3px;
-    border-top-right-radius: 3px;    margin-top: 21px;
+    border-top-right-radius: 3px;    
+    margin-top: 21px;
     padding-left: 13px;
     padding-bottom: 9px;
     font-family: Roboto;
@@ -228,4 +230,9 @@ li:hover {
     left: 509px;
     font-size: 24px;
     line-height: 28px;
+}
+
+.active {
+    background-color: #833AE0;
+    color: #FFFFFF;
 }

@@ -21,31 +21,13 @@ const showLoading = () => {
         }
         loadingDiv = document.createElement('div');
         loadingDiv.classList.add('loading-div')
-        // loadingDiv.style.position = 'fixed'
-        // loadingDiv.style.top = '0';
-        // loadingDiv.style.bottom = '0';
-        // loadingDiv.style.left ='0';
-        // loadingDiv.style.right = '0';
-        // loadingDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.44)';
-        // loadingDiv.style.display = 'flex';
-        // loadingDiv.style.alignItems = 'center';
-        // loadingDiv.style.justifyContent = 'center';
+      
         let loadingP = document.createElement('p');
         loadingP.classList.add('loading-p');
         loadingP.innerText = `Loading...`;
-        // loadingP.style.backgroundColor = '#FFFFFF';
-        // loadingP.style.display = 'flex';
-        // loadingP.style.alignItems = 'center';
-        // loadingP.style.justifyContent = 'center';
-        // loadingP.style.borderRadius = "3px";
-        // loadingP.style.width = '129px';
-        // loadingP.style.height = '54px';
-        // loadingP.style.top = '272px';
-        // loadingP.style.left ='509px';
-        // loadingP.style.fontSize = '24px';
-        // loadingP.style.lineHeight = '28px';
-        document.querySelector('body').append(loadingDiv)
+
         loadingDiv.append(loadingP)
+        document.querySelector('body').append(loadingDiv)
     }, 500)
 
     const hideLoading = () => {
@@ -58,7 +40,6 @@ const showLoading = () => {
     return hideLoading
 }
 
-//подключает список валют к кнопке
 const getAvailableCurrencies = async() => {
     const response = await fetch('https://api.exchangerate.host/symbols')
     const data = await response.json()
@@ -93,45 +74,70 @@ const getRatesForBothDirections = async() => {
 
 leftBtns.forEach((bt) => {
     bt.addEventListener('click', () => {
-        bt.style.background = ('black')
-        bt.style.color = ('green')
         source = bt.innerText
+        // colorLeftBtn()
         reactToCurrencyPairChange()
     })
 })
 
 rightBtns.forEach((bt) => {
     bt.addEventListener('click', () => {
-        bt.style.background = ('yellow')
-        bt.style.color = ('red')
+        // colorRightBtn()
         target = bt.innerText
         reactToCurrencyPairChange()
     })
 })
 
-let selLeft = document.querySelectorAll('#select-left')
-let selRight = document.querySelectorAll('#select-right')
+// function colorLeftBtn (leftBtns) {
+//     leftBtns.style.backgroundColor = 'black'
+// }
 
-selLeft.forEach((sel) => {
-    sel.addEventListener('change', ()=> {
-        sel.style.background = ('orange')
-        sel.style.color = ('purple')
-        source = sel.value
-        reactToCurrencyPairChange()
-    })
+// function colorRightBtn (rightBtns) {
+//     rightBtns.style.backgroundColor = 'black'
+// }
+
+let selLeft = document.querySelector('#select-left')
+let selRight = document.querySelector('#select-right')
+
+
+selLeft.addEventListener('change', ()=> {
+    source = selLeft.value
+    reactToCurrencyPairChange()
 })
-selRight.forEach((sel) => {
-    sel.addEventListener('change', ()=> {
-        sel.style.background = ('orange')
-        sel.style.color = ('purple')
-        target = sel.value
-        reactToCurrencyPairChange()
-    })
+selRight.addEventListener('change', ()=> {
+    target = selRight.value
+    reactToCurrencyPairChange()
 })
+
 
 
 
 function reactToCurrencyPairChange() {
+    const leftActive = document.querySelector('.left.active')
+    const rightActive = document.querySelector('.right.active')
+
+    if (leftActive) {
+        leftActive.classList.remove('active');
+    }
+
+    if (rightActive) {
+        rightActive.classList.remove('active');
+    }
+
+    const newLeftActiveButton = document.querySelector(`#left-${source}`)
+    const newRightActiveButton = document.querySelector(`#right-${target}`)
+
+    if (newLeftActiveButton) {
+        newLeftActiveButton.classList.add('active')
+    } else {
+        selLeft.classList.add('active')
+    }
+
+    if (newRightActiveButton) {
+        newRightActiveButton.classList.add('active')
+    } else {
+        selRight.classList.add('active')
+    }
     const hideLoading = showLoading()
 
     getRatesForBothDirections()
@@ -142,18 +148,17 @@ function reactToCurrencyPairChange() {
         textPLeft.innerText = `1 ${source} = ${rate} ${target}`
         let textPRight = document.querySelector('.actual-value-right')
         textPRight.innerText = `1 ${target} = ${rateRev} ${source}`                                                                     
-        rightInput.value = leftInput.value*rate
-        // leftInput.value = rightInput.value*rates[1]
+        rightInput.value = (leftInput.value*rate).toFixed(6)
 
         hideLoading()
     })
     
 }
 
-reactToCurrencyPairChange()
+reactToCurrencyPairChange() 
 
 function inputChanges () {
-    rightInput.value = leftInput.value*rate
+    rightInput.value = (leftInput.value*rate).toFixed(6)
 }
 
 leftInput.addEventListener('input', () => {
@@ -161,7 +166,7 @@ leftInput.addEventListener('input', () => {
 })
 
 function inputChangesRight () {
-    leftInput.value = rightInput.value*rateRev
+    leftInput.value = (rightInput.value*rateRev).toFixed(6  )
 }
 
 
