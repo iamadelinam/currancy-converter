@@ -75,42 +75,28 @@ const getRatesForBothDirections = async() => {
 leftBtns.forEach((bt) => {
     bt.addEventListener('click', () => {
         source = bt.innerText
-        // colorLeftBtn()
         reactToCurrencyPairChange()
     })
 })
 
 rightBtns.forEach((bt) => {
     bt.addEventListener('click', () => {
-        // colorRightBtn()
         target = bt.innerText
         reactToCurrencyPairChange()
     })
 })
 
-// function colorLeftBtn (leftBtns) {
-//     leftBtns.style.backgroundColor = 'black'
-// }
-
-// function colorRightBtn (rightBtns) {
-//     rightBtns.style.backgroundColor = 'black'
-// }
-
 let selLeft = document.querySelector('#select-left')
 let selRight = document.querySelector('#select-right')
 
-
 selLeft.addEventListener('change', ()=> {
-    source = selLeft.value
+    source = Number(selLeft.value)
     reactToCurrencyPairChange()
 })
 selRight.addEventListener('change', ()=> {
-    target = selRight.value
+    target = Number(selRight.value)
     reactToCurrencyPairChange()
 })
-
-
-
 
 function reactToCurrencyPairChange() {
     const leftActive = document.querySelector('.left.active')
@@ -138,6 +124,7 @@ function reactToCurrencyPairChange() {
     } else {
         selRight.classList.add('active')
     }
+
     const hideLoading = showLoading()
 
     getRatesForBothDirections()
@@ -152,7 +139,6 @@ function reactToCurrencyPairChange() {
 
         hideLoading()
     })
-    
 }
 
 reactToCurrencyPairChange() 
@@ -166,9 +152,8 @@ leftInput.addEventListener('input', () => {
 })
 
 function inputChangesRight () {
-    leftInput.value = (rightInput.value*rateRev).toFixed(6  )
+    leftInput.value = (rightInput.value*rateRev).toFixed(6)
 }
-
 
 rightInput.addEventListener('input', () => {
     inputChangesRight()
